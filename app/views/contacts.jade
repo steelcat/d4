@@ -1,0 +1,16 @@
+h2 Контакты
+table(class="contacts-list table")
+	thead
+		tr
+			th #
+			th Имя
+			th Фамилия
+			th Телефон
+			th Email
+	tbody
+		tr(ng-click="go('/contact/'+$index)" ng-repeat="contact in contacts" class='contacts-list__item')
+			td {{$index}}
+			td {{contact.name}}
+			td {{contact.lastname}}
+			td {{contact.tel}}
+			td {{contact.mail}}

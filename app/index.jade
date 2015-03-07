@@ -1,0 +1,16 @@
+doctype html
+html(lang='ru' ng-app='d4')
+	head
+		link(rel='stylesheet' href='css/vendor/bootstrap/dist/css/bootstrap.css')
+		link(rel='stylesheet' href='css/style.css')
+	body
+		div.container
+			ng-view
+		script(src='js/vendor/angular/angular.js')
+		script(src='js/vendor/angular-route/angular-route.js')
+		script(src='js/vendor/angularfire/dist/angularfire.js')
+		script(src='js/vendor/firebase/firebase.js')
+		script(src='js/d4.js')
+		script(src='js/factories/firebaseFactory.js')
+		script(src='js/controllers/contactsController.js')
+		script(src='js/controllers/contactController.js')

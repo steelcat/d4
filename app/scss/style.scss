@@ -1,0 +1,10 @@
+@charset "UTF-8";
+/**
+ * Основная таблица стилей
+ */
+.contacts-list__item {
+  cursor: pointer;
+}
+.contacts-list__item:hover {
+  background: #ddd;
+}
