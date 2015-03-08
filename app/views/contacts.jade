@@ -1,16 +1,19 @@
-h2 Контакты
-table(class="contacts-list table")
-	thead
-		tr
-			th #
-			th Имя
-			th Фамилия
-			th Телефон
-			th Email
-	tbody
-		tr(ng-click="go('/contact/'+$index)" ng-repeat="contact in contacts" class='contacts-list__item')
-			td {{$index}}
-			td {{contact.name}}
-			td {{contact.lastname}}
-			td {{contact.tel}}
-			td {{contact.mail}}
+.container
+	h2.header-text КОНТАКТЫ
+	a(href="#/contact/new").main__menu-addButton Добавить
+	.content-container
+		table(class="contacts-list table")
+			thead.contacts-list__head
+				tr
+					th #
+					th Имя
+					th Фамилия
+					th Телефон
+					th Email
+			tbody
+				tr(ng-click="go('/contact/'+($index+1))" ng-repeat="contact in contacts" class='contacts-list__item')
+					td {{$index+1}}
+					td {{contact.name}}
+					td {{contact.lastname}}
+					td {{contact.tel}}
+					td {{contact.mail}}

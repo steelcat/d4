@@ -1,3 +1,12 @@
-h2 Контакт
-a(href="#/") назад
-	div {{contact.name}}
+.container
+	.row
+		h2.header-text КОНТАКТ
+	.row
+		a(href="#/") назад
+	.content-container.row
+		.contact-pict-block
+		.contact-text-block
+			.input-group
+				span(class="glyphicon glyphicon-star" aria-hidden="true")
+				input.contact-input(type="email" placeholder="{{contact.mail}}" ng-model="new.email")
+			input.contact-input(type="tel" placeholder="{{contact.tel}}" ng-model="new.phone")

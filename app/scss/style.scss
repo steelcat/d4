@@ -1,10 +1,53 @@
 @charset "UTF-8";
+
+/**
+ * Подключение шрифтов
+ */
+@import 'fonts';
+
 /**
  * Основная таблица стилей
  */
+body {
+  font: 12px/12px SegoeUIRegular;
+}
+.page {
+  background: url('../img/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+.container {
+  width: 800px;
+}
+.header-text {
+  font: 24px/100px SegoeUIRegular;
+  text-align: center;
+}
+.content-container {
+  background-color: #edebed;
+  border-radius: 5px;
+  padding: 12px;
+}
+
+/**
+ * Стили страницы Контакты
+ */
+.contacts-list__head {
+  font: 14px/14px SegoeUIRegular;
+}
 .contacts-list__item {
   cursor: pointer;
 }
 .contacts-list__item:hover {
   background: #ddd;
+}
+
+.contact-text-block {
+  float: right;
+  width: 270px;
+  margin-right: 105px;
+}
+.contact-input {
+  width: 270px;
+  height: 28px;
+  font: 12px/28px SegoeUIRegular;
 }

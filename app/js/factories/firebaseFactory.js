@@ -1,4 +1,4 @@
-d4.factory('firebaseFactory', ['fbURL','$firebaseArray', function (fbURL,$firebaseArray) {
+d4.factory('firebaseFactory', ['fbURL', '$firebaseObject', '$firebaseArray', function (fbURL,$firebaseObject,$firebaseArray) {
 	var fb = {},
 		ref = new Firebase(fbURL),
 		sync = $firebaseArray(ref);
@@ -6,14 +6,18 @@ d4.factory('firebaseFactory', ['fbURL','$firebaseArray', function (fbURL,$fireba
 		var url = fbURL+'contacts',
 			ref = new Firebase(url),
 			sync = $firebaseArray(ref);
+			console.log(sync);
 			return sync;
 	};
 	fb.contact = function(index) {
 		var url = fbURL+'contacts/'+index,
 			ref = new Firebase(url),
-			sync = $firebaseArray(ref);
+			sync = $firebaseObject(ref);
 			console.log(sync);
 		return sync;
 	};
+	fb.addContact = function(arr){
+		return sync.$add(arr);
+	}
 	return fb;
 }]);
