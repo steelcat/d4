@@ -17,11 +17,11 @@
 				h3.form-header Контактная информация
 				.contact-input-group.input-group
 					.input-group-addon
-						span(class="glyphicon glyphicon-envelope" aria-hidden="true")
+						i(class="fa fa-envelope-o")
 					input.contact-input(type="mail" placeholder="{{contact.mail}}" value="{{contact.mail}}" ng-model="contact.mail")
 				.contact-input-group.input-group
 					.input-group-addon
-						span(class="glyphicon glyphicon-earphone" aria-hidden="true")
+						i(class="fa fa-phone")
 					input.contact-input(type="tel" placeholder="{{contact.tel}}" ng-model="contact.tel")
 			button(type="submit" class="btn btn-default" ng-click="contactFunc(contact)") Сохранить
-			button(type="submit" class="btn btn-default" ng-click="contactDel(contact)") Удалить
+			button(type="submit" class="btn btn-default" ng-click="contactDel(contact.$id)") Удалить

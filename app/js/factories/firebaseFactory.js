@@ -25,8 +25,10 @@ d4.factory('firebaseFactory', ['fbURL', '$firebaseObject', '$firebaseArray', fun
 	};
 
 	// Удаление контакта
-	fb.deleteContact = function(contact){
-		return $firebaseObject(ref).$remove(contact);
+	fb.deleteContact = function(id){
+		var url = fbURL+id,
+			ref = new Firebase(url);
+		return $firebaseObject(ref).$remove();
 	};
 	return fb;
 }]);

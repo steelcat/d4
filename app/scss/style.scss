@@ -18,6 +18,9 @@ body {
 .container {
   width: 800px;
 }
+.input-group-addon {
+  min-width: 40px;
+}
 .main-header {
   font: 24px/100px SegoeUIRegular;
   text-align: center;
