@@ -1,6 +1,6 @@
-d4.controller('contactsController', ['$scope', '$rootScope', '$firebaseObject', 'fbURL', 'firebaseFactory', '$location', function ($scope, $rootScope, $firebaseObject, fbURL, firebaseFactory, $location) {
+d4.controller('contactsController', ['$scope', '$rootScope', '$firebaseObject', '$location', 'fbURL', 'firebaseFactory', 'redirectFactory', function ($scope, $rootScope, $firebaseObject, $location, fbURL, firebaseFactory, redirectFactory) {
 	$scope.contacts = firebaseFactory.contacts();
-	$scope.go = function (path) {
-		$location.path(path);
-	};
+	$scope.go = function(path) {
+		return redirectFactory.redirectPath(path);
+	}
 }]);

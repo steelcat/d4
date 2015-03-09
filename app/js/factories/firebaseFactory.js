@@ -1,28 +1,32 @@
 d4.factory('firebaseFactory', ['fbURL', '$firebaseObject', '$firebaseArray', function (fbURL,$firebaseObject,$firebaseArray) {
 	var fb = {},
-		ref = new Firebase(fbURL),
-		sync = $firebaseArray(ref);
+		ref = new Firebase(fbURL);
+
+	// Вывод списка контактов
 	fb.contacts = function() {
-		var url = fbURL,
-			ref = new Firebase(url),
-			sync = $firebaseArray(ref);
-		return sync;
+		return $firebaseArray(ref);
 	};
+
+	// Вывод конкретного контакта
 	fb.contact = function(id) {
 		var url = fbURL+id,
-			ref = new Firebase(url),
-			sync = $firebaseObject(ref);
-		return sync;
+			ref = new Firebase(url);
+		return $firebaseObject(ref);
 	};
+
+	// Добавление контакта
 	fb.addContact = function(contact){
-		return sync.$add(contact);
+		return $firebaseArray(ref).$add(contact);
 	};
+
+	// Редактирование контакта
 	fb.editContact = function(contact){
-		console.log(contact);
 		return contact.$save();
 	};
+
+	// Удаление контакта
 	fb.deleteContact = function(contact){
-		return sync.$remove(contact);
+		return $firebaseObject(ref).$remove(contact);
 	};
 	return fb;
 }]);
