@@ -3,21 +3,26 @@ d4.factory('firebaseFactory', ['fbURL', '$firebaseObject', '$firebaseArray', fun
 		ref = new Firebase(fbURL),
 		sync = $firebaseArray(ref);
 	fb.contacts = function() {
-		var url = fbURL+'contacts',
+		var url = fbURL,
 			ref = new Firebase(url),
 			sync = $firebaseArray(ref);
-			console.log(sync);
-			return sync;
-	};
-	fb.contact = function(index) {
-		var url = fbURL+'contacts/'+index,
-			ref = new Firebase(url),
-			sync = $firebaseObject(ref);
-			console.log(sync);
 		return sync;
 	};
-	fb.addContact = function(arr){
-		return sync.$add(arr);
-	}
+	fb.contact = function(id) {
+		var url = fbURL+id,
+			ref = new Firebase(url),
+			sync = $firebaseObject(ref);
+		return sync;
+	};
+	fb.addContact = function(contact){
+		return sync.$add(contact);
+	};
+	fb.editContact = function(contact){
+		console.log(contact);
+		return contact.$save();
+	};
+	fb.deleteContact = function(contact){
+		return sync.$remove(contact);
+	};
 	return fb;
 }]);

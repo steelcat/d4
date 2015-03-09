@@ -1,5 +1,5 @@
 .container
-	h2.header-text КОНТАКТЫ
+	h2.main-header КОНТАКТЫ
 	a(href="#/contact/new").main__menu-addButton Добавить
 	.content-container
 		table(class="contacts-list table")
@@ -11,7 +11,7 @@
 					th Телефон
 					th Email
 			tbody
-				tr(ng-click="go('/contact/'+($index+1))" ng-repeat="contact in contacts" class='contacts-list__item')
+				tr(ng-click="go('/contact/'+contact.$id)" ng-repeat="contact in contacts" class='contacts-list__item')
 					td {{$index+1}}
 					td {{contact.name}}
 					td {{contact.lastname}}

@@ -1,7 +1,7 @@
 var d4 = angular.module('d4', ['ngRoute', 'firebase']);
 
 d4.value({
-	'fbURL': 'https://loftdz4.firebaseio.com/'
+	'fbURL': 'https://loftdz4.firebaseio.com/contacts/'
 });
 
 d4.config(['$routeProvider', function ($routeProvider) {
@@ -10,7 +10,7 @@ d4.config(['$routeProvider', function ($routeProvider) {
 			templateUrl: 'views/contacts.html',
 			controller: 'contactsController'
 		})
-		.when('/contact/:index', {
+		.when('/contact/:id', {
 			templateUrl: 'views/contact.html',
 			controller: 'contactController'
 		})

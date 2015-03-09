@@ -1,12 +1,26 @@
 .container
 	.row
-		h2.header-text КОНТАКТ
+		h2.main-header КОНТАКТ
 	.row
 		a(href="#/") назад
 	.content-container.row
-		.contact-pict-block
-		.contact-text-block
-			.input-group
-				span(class="glyphicon glyphicon-star" aria-hidden="true")
-				input.contact-input(type="email" placeholder="{{contact.mail}}" ng-model="new.email")
-			input.contact-input(type="tel" placeholder="{{contact.tel}}" ng-model="new.phone")
+		form
+			.contact-pict-block
+
+			.contact-text-block
+				h3.form-header Имя
+				.contact-input-group.input-group
+					input.contact-input(type="name" placeholder="{{contact.name}}" ng-model="contact.name")
+				h3.form-header Фамилия
+				.contact-input-group.input-group
+					input.contact-input(type="lastname" placeholder="{{contact.lastname}}" ng-model="contact.lastname")
+				h3.form-header Контактная информация
+				.contact-input-group.input-group
+					.input-group-addon
+						span(class="glyphicon glyphicon-envelope" aria-hidden="true")
+					input.contact-input(type="mail" placeholder="{{contact.mail}}" value="{{contact.mail}}" ng-model="contact.mail")
+				.contact-input-group.input-group
+					.input-group-addon
+						span(class="glyphicon glyphicon-earphone" aria-hidden="true")
+					input.contact-input(type="tel" placeholder="{{contact.tel}}" ng-model="contact.phone")
+			button(type="submit" class="btn btn-default" ng-click="editContact(contact)") Сохранить
